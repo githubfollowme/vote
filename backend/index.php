@@ -61,7 +61,7 @@ if(!isset($_SESSION['user'])){
 <?php 
 
 if(isset($_SESSION['user'])){
-  echo "<span class='pr-5'>歡迎後臺管理頁面！{$_SESSION['user']}</span>";
+  echo "<span class='h3 pr-5'>歡迎後臺管理頁面！{$_SESSION['user']}</span>";
 ?>
 <div>
   <a class="btn btn-sm btn-primary mx-1" href="../logout.php">登出</a>
