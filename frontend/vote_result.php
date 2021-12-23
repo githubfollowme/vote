@@ -21,3 +21,7 @@ $rows=q($sql);
     }
 ?>
 </ol>
+<div style="width:700px; height:700px;">
+<canvas id="myChart" ></canvas>
+</div>
+

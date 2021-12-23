@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-12-03 09:38:01
--- 伺服器版本： 10.4.21-MariaDB
--- PHP 版本： 7.4.23
+-- 產生時間： 2021-12-23 13:46:34
+-- 伺服器版本： 10.4.19-MariaDB
+-- PHP 版本： 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫: `mypolling`
+-- 資料庫： `mypolling`
 --
 
 -- --------------------------------------------------------
@@ -94,11 +94,12 @@ CREATE TABLE `topics` (
 --
 
 INSERT INTO `topics` (`id`, `topic`) VALUES
-(1, '今天晚餐吃什麼'),
-(2, '亂打一通'),
-(3, '最後一次了'),
-(5, '明天穿什麼好?'),
-(6, '今晚吃火鍋好不?');
+(1, '題目一.公投結果你更支持重啓核電或不贊成重啓核電？？'),
+(2, '題目二.就健康因素考量,是否反對萊豬進口？'),
+(3, '題目三.是否贊成藻礁被保護而非開發用作再生電力能源？'),
+(5, '題目五(社會時事).是否贊成王力宏先生主動承擔起其離婚後的房產轉移稅金?？'),
+(6, '題目四.是否贊成公投綁大選,節省國家及政府消耗人力物力等場次資源？？'),
+(7, '題目六.您是否贊成金莎巧克力推出“蕾神巧克力”？？');
 
 -- --------------------------------------------------------
 
@@ -121,7 +122,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `account`, `password`, `email`, `name`, `gender`, `birthday`) VALUES
-(1, 'mack', '1234', 'macklun@ms7.hinet.net', '劉勤永', '男', '1974-10-07');
+(1, 'mack', '1234', 'macklun@ms7.hinet.net', '劉勤永', '男', '1974-10-07'),
+(2, 'Keep', '1226', 'keephub@gmail.com', 'Keep', '男', '2021-12-25');
 
 --
 -- 已傾印資料表的索引
@@ -171,13 +173,13 @@ ALTER TABLE `options`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
