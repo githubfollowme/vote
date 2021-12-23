@@ -1,8 +1,10 @@
-<h1>列出所有的問題 
+<div class="bg-secondary p-2 text-white bg-opacity-75">
+<h3>列出所有的問題 
     <a  class="btn btn-primary rounded btn-sm" href="?do=add_subject_form">
         新增問卷
     </a>
-</h1>
+</h3>
+</div>
 <?php
 // 用all函數把topics 賦予到subjects
 $subjects=all('topics');

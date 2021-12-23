@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>問卷系統</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <style>
       .container{
         min-height: 544px;
       }
-
+      body  {
+  background-image: url("paper.gif");
+  background-color: #cccccc;
+}
     </style>
 </head>
 <body>
@@ -48,7 +52,7 @@
 </div>
 </a>
 </div>
-<nav class='bg-light shadow py-3 px-2 d-flex justify-content-between mb-4'>
+<nav class='bg-light shadow py-3 px-2 d-flex justify-content-between mb-4 bg-secondary text-gray'>
 <div>&nbsp;</div>
 <?php 
 
@@ -59,9 +63,10 @@ if(isset($_SESSION['error'])){
 
 //判斷是否有登入的紀錄，根據登入狀況，顯示不同的功能按鈕
 if(isset($_SESSION['user'])){
-  echo "<span class='pr-5 h3'>歡迎來到投票系統首頁！{$_SESSION['user']}</span>";
+  echo "<span class='pr-5 h2'>歡迎來到投票系統首頁！{$_SESSION['user']}</span>";
 ?>
 <div>
+<a class="btn btn-md btn-warning mx-1" href="index.php">囘到首頁</a>
   <a class="btn btn-md btn-primary mx-1" href="logout.php">登出</a>
   <a class="btn btn-md btn-info mx-1" href="backend/index.php">後台管理編輯</a>
 </div>
@@ -146,5 +151,7 @@ const myChart = new Chart(ctx, {
     }
 });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
 </html>

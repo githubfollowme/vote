@@ -52,7 +52,7 @@ if(!isset($_SESSION['user'])){
 </div>
 <nav class='bg-light shadow py-3 px-2 d-flex justify-content-between mb-4'>
 <div>
-<a class="btn btn-md btn-info mx-1" href="../index.php">前臺首頁</a>  
+<a class="btn btn-md btn-warning mx-1" href="../index.php">前臺首頁</a>  
 <a class='px-2' href="?do=show_vote_list">問卷管理</a>
   <!-- <a class='px-2' href="?do=vote_result">回到首頁</a> -->
   <a class='px-2' href="?do=ad">廣告管理</a>  
@@ -61,7 +61,7 @@ if(!isset($_SESSION['user'])){
 <?php 
 
 if(isset($_SESSION['user'])){
-  echo "<span class='h3 pr-5'>歡迎後臺管理頁面！{$_SESSION['user']}</span>";
+  echo "<span class='h2 pr-5'>歡迎後臺管理頁面！{$_SESSION['user']}</span>";
 ?>
 <div>
   <a class="btn btn-sm btn-primary mx-1" href="../logout.php">登出</a>

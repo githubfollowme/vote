@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2021 年 12 月 23 日 18:34
+-- 產生時間： 2021 年 12 月 23 日 19:42
 -- 伺服器版本： 10.3.32-MariaDB-0ubuntu0.20.04.1
 -- PHP 版本： 7.4.3
 
@@ -39,8 +39,10 @@ CREATE TABLE `ad` (
 --
 
 INSERT INTO `ad` (`id`, `name`, `sh`, `intro`) VALUES
-(8, 'image-06.jpg', 1, '準備睡覺的小花'),
-(9, 'image-10.jpg', 1, '金針花海');
+(8, 'ad_1.jpg', 1, 'MerryChristmas1'),
+(9, 'ad_2.jpg', 1, 'You Should Marry Me'),
+(10, 'ad_3.jpg', 1, 'for my best proposal'),
+(11, 'ad_4.jpg', 1, 'love you');
 
 -- --------------------------------------------------------
 
@@ -62,8 +64,8 @@ CREATE TABLE `options` (
 INSERT INTO `options` (`id`, `opt`, `count`, `topic_id`) VALUES
 (1, '贊成', 2, 5),
 (2, '不贊成', 1, 5),
-(3, '贊成', 4, 5),
-(4, '贊成', 2, 5),
+(3, '沒意見', 4, 5),
+(4, '房子送我多好', 2, 5),
 (9, '不贊成', 4, 1),
 (10, '贊成', 3, 1),
 (11, '沒意見', 5, 1),
@@ -72,11 +74,11 @@ INSERT INTO `options` (`id`, `opt`, `count`, `topic_id`) VALUES
 (21, '沒意見', 2, 2),
 (22, '贊成', 5, 2),
 (24, '不贊成', 1, 2),
-(25, '贊成', 1, 2),
+(25, '台灣不是鬼島嗎', 1, 2),
 (27, '沒意見', 3, 6),
 (28, '不贊成', 1, 6),
 (29, '很贊成', 1, 6),
-(30, '沒意見', 3, 6),
+(30, '算我一份', 3, 6),
 (31, '', 0, 3);
 
 -- --------------------------------------------------------
@@ -162,7 +164,7 @@ ALTER TABLE `users`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ad`
 --
 ALTER TABLE `ad`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `options`
