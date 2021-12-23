@@ -1,4 +1,11 @@
-<?php include_once "./api/db.php";?>
+<?php include_once "../api/db.php";
+
+if(!isset($_SESSION['user'])){
+  to("../index.php");
+  exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,31 +19,26 @@
         min-height: 544px;
       }
 
+
     </style>
 </head>
 <body>
 
-<div class="jumbotron p-0 mb-0" style="overflow:hidden;height:250px">
+<div class="jumbotron p-0 mb-0"  style="overflow:hidden;height:250px">
 <a href="index.php">
-<div id="carouselExampleSlidesOnly" class="carousel slide position-relative" data-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide  position-relative" data-ride="carousel">
   <div class="carousel-inner position-absolute" style="top:-250px">
   <?php 
-    
-    //取得資料表中狀態為1的廣告圖片
     $images=all('ad',['sh'=>1]);
 
-    //使用迴圈來將每一筆廣告圖片依照html的格式顯示在網頁上
     foreach($images as $key => $image){
-
-      //判斷如果是第一筆，會加入一個active的class
       if($key==0){
         echo "<div class='carousel-item active'>";
       }else{
         echo "<div class='carousel-item'>";
       }
 
-      //帶入圖片的檔名及資訊
-      echo "  <img class='d-block w-100' src='image/{$image['name']}' title='{$image['intro']}'>";
+      echo "  <img class='d-block w-100' src='../image/{$image['name']}' alt='{$image['intro']}'>";
       echo "</div>";
       
 
@@ -49,51 +51,41 @@
 </a>
 </div>
 <nav class='bg-light shadow py-3 px-2 d-flex justify-content-between mb-4'>
-<div>&nbsp;</div>
+<div>
+  <a class='px-2' href="?do=show_vote_list">問卷管理</a>
+  <a class='px-2' href="?do=member">會員管理</a>
+  <a class='px-2' href="?do=ad">廣告管理</a>  
+
+
+</div>
 <?php 
 
-//判斷是否有任何的錯誤訊息存在，有則顯示
-if(isset($_SESSION['error'])){
-  echo "<span class='text-danger'>".$_SESSION['error']."</span>";
-}
-
-//判斷是否有登入的紀錄，根據登入狀況，顯示不同的功能按鈕
 if(isset($_SESSION['user'])){
-  echo "<span class='pr-5 h3'>歡迎！{$_SESSION['user']}</span>";
+  echo "<span class='pr-5'>歡迎！{$_SESSION['user']}</span>";
 ?>
 <div>
-  <a class="btn btn-md btn-primary mx-1" href="logout.php">登出</a>
-  <a class="btn btn-md btn-info mx-1" href="backend/index.php">後台管理編輯</a>
-</div>
-
-<?php
-
-}else{
-?>
-<div>
-  <a class="btn btn-sm btn-primary mx-1" href="?do=login">會員登入</a>
-  <a class="btn btn-sm btn-info mx-1" href="?do=reg">註冊新會員</a>
+  <a class="btn btn-sm btn-primary mx-1" href="../logout.php">登出</a>
 </div>
 <?php
 }
 ?>
+
 </nav>
+
+
 <div class="container">
 <?php
 
-//根據網址帶的do參數內容來決定要include那一個檔案內容
-$do=(isset($_GET['do']))?$_GET['do']:'show_vote_list';
-
-//建立要引入的檔案路徑
-$file="./frontend/".$do.".php";
+$do=(isset($_GET['do']))?$_GET['do']:'manage_vote';
+$file=$do.".php";
 if(file_exists($file)){
     include $file;
 }else{
-    include "./frontend/show_vote_list.php";
+    include "manage_vote.php";
 }
 ?>
-</div>
-<div class="p-3 text-center text-light bg-primary">版權所有~歡迎交流</div>
+</div> 
+<div class="p-3 text-center text-light bg-primary ">版權所有~歡迎交流</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
