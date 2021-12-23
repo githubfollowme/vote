@@ -59,7 +59,7 @@ if(isset($_SESSION['error'])){
 
 //判斷是否有登入的紀錄，根據登入狀況，顯示不同的功能按鈕
 if(isset($_SESSION['user'])){
-  echo "<span class='pr-5 h3'>歡迎！{$_SESSION['user']}</span>";
+  echo "<span class='pr-5 h3'>歡迎來到投票系統首頁！{$_SESSION['user']}</span>";
 ?>
 <div>
   <a class="btn btn-md btn-primary mx-1" href="logout.php">登出</a>

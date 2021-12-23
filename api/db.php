@@ -1,9 +1,9 @@
 <?php
 
-    $dsn="mysql:host=localhost;charset=utf8;dbname=mypolling";
-    $pdo=new PDO($dsn,'root','');
-    // $dsn="mysql:host=localhost;charset=utf8;dbname=s1100417";
-    // $pdo=new PDO($dsn,'s1100417','s1100417');
+    // $dsn="mysql:host=localhost;charset=utf8;dbname=mypolling";
+    // $pdo=new PDO($dsn,'root','');
+    $dsn="mysql:host=localhost;charset=utf8;dbname=s1100417";
+    $pdo=new PDO($dsn,'s1100417','s1100417');
     session_start();
 
     //取得符合條件的一筆資料
