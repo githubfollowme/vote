@@ -1,5 +1,5 @@
 <?php include_once "../api/db.php";
-
+//Q 假如 user欄位的緩存 不存在 就直接回到前台首頁 再離開?
 if(!isset($_SESSION['user'])){
   to("../index.php");
   exit();
