@@ -8,6 +8,7 @@ if(!empty($_FILES['name']['tmp_name'])){
 
     //取得表單傳來的intro欄位資料
     $intro=$_POST['intro'];
+  
 
     //取得上傳檔案的原始檔名 前面的name就是表單的 或 資料庫的,後面的name是FILES原本自帶的
     $filename=$_FILES['name']['name'];
@@ -18,7 +19,8 @@ if(!empty($_FILES['name']['tmp_name'])){
 
     //使用insert自訂函式來完成新增廣告圖片的動作
     insert('ad',['name'=>$filename,'sh'=>0,'intro'=>$intro]);
-}
+
+  }
 
 //新增完畢，導向回廣告管理頁面
 // to("../backend/?do=ad");
